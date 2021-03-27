@@ -18,7 +18,6 @@ public class TestBase {
 		Constant.WEBDRIVER.navigate().to("https://feature-qa.customer-frontend.staging.aspireapp.com/sg");
 		DriverUtils.setImplicitlyWait();
 		DriverUtils.maximize();
-		
 	}
 
 	@AfterMethod

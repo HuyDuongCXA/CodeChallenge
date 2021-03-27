@@ -65,7 +65,7 @@ public class BusinessDetailsPage extends GeneralPage {
 		selectIndustries(businessInfo);
 	}
 	
-	public void clickSUBMITBtn() {
+	public void clickSubmitBtn() {
 		getElement(SUBMIT_BTN).click();
 	}
 	

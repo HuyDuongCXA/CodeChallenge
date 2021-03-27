@@ -16,7 +16,7 @@ public class UserInfo {
 	private String nationality="Afghanistan";
 	private String gender="Male";
 	private String interest="Debit Card";
-	//private String marketingQues;
+	private String registeredEmailAddress = "abc@abc.com";
 	
 	//Getters	
 	public String getPhoneNumber() {return phoneNumber;}
@@ -32,7 +32,7 @@ public class UserInfo {
 	public String getNationality() {return nationality;}
 	public String getGender() {return gender;}
 	public String getInterest() {return interest;}
-	
+	public String getRegisteredEmailAddress() {return registeredEmailAddress;}
 
 	//Setters
 	public void SetPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
@@ -47,12 +47,13 @@ public class UserInfo {
 	public void SetNationality(String nationality) {this.nationality = nationality;}
 	public void SetGender(String gender) {this.gender = gender;}
 	public void SetInterest(String interest) {this.interest = interest;}
+	public void SetregisteredEmailAddress(String registeredEmailAddress) {this.registeredEmailAddress = registeredEmailAddress;}
 	
 	//public void SetMarketingQues(String marketingQues) {this.marketingQues = marketingQues;}
 	
 	public UserInfo() {}
 	public UserInfo(String phoneNumber, String phoneOtp,String emailOtp, String fullName, String emailAddress,String idCardNumber, String day,
-			String month, String year, String nationality, String gender, String interest) {
+			String month, String year, String nationality, String gender, String interest, String registeredEmailAddress) {
 		this.phoneNumber = phoneNumber;
 		this.phoneOtp = phoneOtp;
 		this.emailOtp = emailOtp;
@@ -65,9 +66,9 @@ public class UserInfo {
 		this.nationality = nationality;
 		this.gender = gender;
 		this.interest = interest;
+		this.registeredEmailAddress = registeredEmailAddress;
 	}
 
-	
 	public UserInfo initUserInfo() {
 		this.phoneNumber = Utilities.generateRandomPhoneNumber();
 		this.emailAddress = Utilities.generateRandomEmail();

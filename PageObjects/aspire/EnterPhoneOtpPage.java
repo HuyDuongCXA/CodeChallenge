@@ -12,7 +12,8 @@ public class EnterPhoneOtpPage extends LoginToAspirePage {
     // Methods
     
     public void enterPhoneOtp(UserInfo userInfo) {
-  	  DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
+        DriverUtils.waitForPageLoadedCompletely();
+        DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
   	  getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
     }
 }

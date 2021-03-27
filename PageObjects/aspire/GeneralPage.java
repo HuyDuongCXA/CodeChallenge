@@ -22,8 +22,6 @@ public class GeneralPage {
 		catch (org.openqa.selenium.NoSuchElementException e) {
 		    return false;
 		  }
-		
-		
 		}
 
 }
