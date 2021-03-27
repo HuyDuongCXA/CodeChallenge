@@ -13,7 +13,6 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 	private final String STANDARD_GET_STARTED_BTN = "//button[@class='q-btn q-btn-item non-selectable no-outline aspire-button q-my-md q-btn--standard q-btn--rectangle bg-secondary text-white q-btn--actionable q-focusable q-hoverable q-btn--wrap']" ;
 	private final String GET_STARTED_BTN = "//button[@class='q-btn q-btn-item non-selectable no-outline aspire-button aspire-button--cta q-btn--standard q-btn--rectangle bg-primary text-white q-btn--actionable q-focusable q-hoverable q-btn--wrap']";
 	private final String YEAR_LBL = "//span[@class='block' and .='%s']";
-	//private final String WANTED_YEAR_LBL = "//span[@class='q-btn__content text-center col items-center q-anchor--skip justify-center row']//span[@class='block' and .='%s']";
 	private final String WANTED_YEAR_LBL = "//span[@class='block' and .='%s']";
 	private final String PREVIOUS_YEAR_ICON= "//i[@class='fas fa-chevron-left q-icon notranslate']";
 	private final String MONTH_LBL = "//span[@class='block' and .='%s']";
@@ -30,10 +29,7 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 	private final String INTEREST_CB = "//div[@class='q-item q-item-type row no-wrap q-item--clickable q-link cursor-pointer q-manual-focusable q-item--dense' and .='%s']//div[@role='checkbox']";
 	private final String SUBMIT_BTN = "//button[@role='button']";
 	
-	
-	
 	// Methods
-	
 	public void clickYesContinueBtn() {
 		DriverUtils.waitForElementDisplayed(YES_CONTINUE_BTN);
 		getElement(YES_CONTINUE_BTN).click();
@@ -74,7 +70,6 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 		// Click on the current Year label
 		DriverUtils.waitForElementDisplayed(yearTemp);
 		getElement(yearTemp).click();
-		//DriverUtils.waitForPageLoadedCompletely();
 		DriverUtils.setLowImplicitlyWait();
 		
 		
@@ -92,12 +87,9 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 		// Then click on the wanted Year
 		DriverUtils.setImplicitlyWait();
 		getElement(wantedYearTemp).click();
-		System.out.println("about to click current month");
 		getElement(monthTemp).click();
 		
 		getElement(wantedMonthTemp).click();
-		
-		System.out.println("wanted month is clicked");
 		
 		try {
 			getElement(wantedDayTemp).click();
