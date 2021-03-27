@@ -7,7 +7,6 @@ import driverUltils.DriverUtils;
 public class CompleteVerificationPage extends GeneralPage {
     //Locators
     private final String UPLOAD_KTP_BTN = "(//input[@class='q-uploader__input overflow-hidden absolute-full'])[2]";
-    //private final String CONTINUE_BTN = "//button[@isfixed='true']";
     private String TEST = "//p[@class='q-mb-lg']";
     private final String CONTINUE_BTN = "//button[@role='button' and @isfixed='true']";
     private final String BEGIN_VERIFICATION_BTN = "//button[@role='button' and .='Begin Verification']";
@@ -16,8 +15,6 @@ public class CompleteVerificationPage extends GeneralPage {
 
     //Methods
     public void UploadPhoto() {
-        //DriverUtils.waitForElementDisplayed(UPLOAD_KTP_BTN);
-        System.out.println("About to send photo ");
         getElement(UPLOAD_KTP_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
         System.out.println("Send photo successfully");
     }
@@ -41,7 +38,6 @@ public class CompleteVerificationPage extends GeneralPage {
             }
             else{break;}
         }
-
     }
 
         public String getSelfieWithKtpText() {

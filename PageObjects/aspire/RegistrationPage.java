@@ -38,7 +38,6 @@ UserInfo userInfo = new UserInfo();
 	}
 	
 	public void fillMarketingQues(UserInfo userInfo) {
-		//String temp = null;
 		String item = MARKETING_ITEM.format(MARKETING_ITEM, userInfo.getMarketingQues());
 		getElement(WHERE_DID_YOU_HEAR_ABOUT_US_CBB).click();
 		getElement(item).click();
@@ -65,12 +64,6 @@ UserInfo userInfo = new UserInfo();
 	
 	public void clickCompletedContinueBtn() {
 		DriverUtils.waitForPageLoadedCompletely();
-		/*try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		getElement(COMPLETED_CONTINUE_BTN).click();
 	}
 	
