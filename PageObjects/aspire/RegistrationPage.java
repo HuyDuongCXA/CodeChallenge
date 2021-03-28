@@ -3,9 +3,9 @@ package aspire;
 import driverUltils.DriverUtils;
 
 public class RegistrationPage extends LoginToAspirePage {
-UserInfo userInfo = new UserInfo();
+	UserInfo userInfo = new UserInfo();
 
-	//Locator
+	//Locators
 	private final String FULL_NAME_TXT = "//input[@name='full_name']";
 	private final String EMAIL_ADDRESS_TXT = "//input[@name='email']";
 	private final String MOBILE_NUMBER_TXT = "//input[@name='phone']";

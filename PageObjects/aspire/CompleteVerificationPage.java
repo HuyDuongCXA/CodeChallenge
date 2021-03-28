@@ -29,65 +29,36 @@ public class CompleteVerificationPage extends GeneralPage {
 
         DriverUtils.waitForElementDisplayed(BEGIN_VERIFICATION_BTN);
         getElement(BEGIN_VERIFICATION_BTN).click();
-        System.out.println("ClickVerifyButton successfully");
     }
 
     public void clickContinueBtn() {
-        System.out.println("About to click continue button ");
         DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
-        for (int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             String a = getElement(SELFIE_WITH_KTP_TEXT).getText().trim();
-            if(a.equals("Front of KTP")){
+            if (a.equals("Front of KTP")) {
                 getElement(CONTINUE_BTN).click();
+            } else {
+                break;
             }
-            else{break;}
         }
     }
 
     public void clickSelfieContinueBtn() {
-        System.out.println("About to click Selfie continue button ");
         DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
         getElement(CONTINUE_BTN).click();
-        /*for (int i=0;i<3;i++){
-            String a = getElement(NEXT_PAGE_TEXT).getText().trim();
-            if(a.equals("Front of KTP")){
-                getElement(CONTINUE_BTN).click();
-            }
-            else{break;}
-        }*/
-        System.out.println("Selfie continue button clicked ");
     }
 
     public String getSelfieWithKtpText() {
-            DriverUtils.waitForElementDisplayed(SELFIE_WITH_KTP_TEXT);
-            return getElement(SELFIE_WITH_KTP_TEXT).getText().trim();
-        }
+        DriverUtils.waitForElementDisplayed(SELFIE_WITH_KTP_TEXT);
+        return getElement(SELFIE_WITH_KTP_TEXT).getText().trim();
+    }
 
-    public String getNextPageText(){
+    public String getNextPageText() {
         DriverUtils.waitForElementDisplayed(SELFIE_WITH_KTP_TEXT);
         return getElement(NEXT_PAGE_TEXT).getText().trim();
     }
 
-    public void uploadSelfiePhoto(){
-        //DriverUtils.waitForElementDisplayed(TAKE_A_SELFIE_BTN);
-        //DriverUtils.waitForPageLoadedCompletely();
+    public void uploadSelfiePhoto() {
         getElement(TAKE_A_SELFIE_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
     }
-
-    public void takeSelfie() throws InterruptedException {
-        System.out.println("About to Allow Permission");
-        Thread.sleep(2000);
-        Constant.WEBDRIVER.switchTo().alert().accept();
-        System.out.println("Permission allowed");
-        getElement(TAKE_A_SELFIE_BTN2).click();
-        Thread.sleep(2000);
-        System.out.println("About take a selfie");
-        getElement(TAKE_A_SELFIE_BTN2).click();
-    }
-
-
-
-
-
-
-    }
+}
