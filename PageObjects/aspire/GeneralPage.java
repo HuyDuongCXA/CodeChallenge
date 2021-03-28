@@ -7,21 +7,20 @@ import constant.Constant;
 import driverUltils.DriverUtils;
 
 public class GeneralPage {
-	
-	public static WebElement getElement(String locator) {
-		return Constant.WEBDRIVER.findElement(By.xpath(locator));
-	}
-	
-	
-	public static boolean isElementPresent(String locator) {
-		
-		try {
-			  getElement(locator);
-		    return true;
-		  }
-		catch (org.openqa.selenium.NoSuchElementException e) {
-		    return false;
-		  }
-		}
+
+    public static WebElement getElement(String locator) {
+        return Constant.WEBDRIVER.findElement(By.xpath(locator));
+    }
+
+
+    public static boolean isElementPresent(String locator) {
+
+        try {
+            getElement(locator);
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
 
 }

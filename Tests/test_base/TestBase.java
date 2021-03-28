@@ -12,7 +12,13 @@ public class TestBase {
 	
 	@BeforeMethod
 	public void beforeMethod() {
+		String a = System.getProperty("os.name");
 		System.out.println("Pre-condition");
+		if(a.equals("Mac OS X")){
+			System.setProperty("webdriver.chrome.driver", Common.getProjectPath() + "/Executables/chromedriver");
+		}
+
+		else{System.setProperty("webdriver.chrome.driver", Common.getProjectPath() + "/Executables/chromedriver.exe");}
 		System.setProperty("webdriver.chrome.driver", Common.getProjectPath() + "/Executables/chromedriver");
 		Constant.WEBDRIVER = new ChromeDriver();
 		Constant.WEBDRIVER.navigate().to("https://feature-qa.customer-frontend.staging.aspireapp.com/sg");

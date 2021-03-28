@@ -14,42 +14,34 @@ import constant.Constant;
 
 public class DriverUtils {
 
-	/*
-	 * protected static WebDriverWait waitTime(int timeOutInSeconds) { WebDriverWait
-	 * wait = new WebDriverWait(Constant.WEBDRIVER, timeOutInSeconds); return wait;
-	 * }
-	 * 
-	 * protected static WebDriverWait waitTime() { return waitTime(60); }
-	 */
+    public static void waitForElementDisplayed(String locator) {
+        WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Constant.TIMEOUT);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+    }
 
-	public static void waitForElementDisplayed(String locator) {
-		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Constant.TIMEOUT);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-	}
+    public static void setImplicitlyWait() {
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.LONG_TIMEOUT, TimeUnit.MILLISECONDS);
+    }
 
-	public static void setImplicitlyWait() {
-		Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.LONG_TIMEOUT, TimeUnit.MILLISECONDS);
-	}
-	
-	public static void setLowImplicitlyWait() {
-		Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.SHORT_TIMEOUT, TimeUnit.MILLISECONDS);
-	}
+    public static void setLowImplicitlyWait() {
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.SHORT_TIMEOUT, TimeUnit.MILLISECONDS);
+    }
 
-	public static void maximize() {
-		Constant.WEBDRIVER.manage().window().maximize();
-	}
+    public static void maximize() {
+        Constant.WEBDRIVER.manage().window().maximize();
+    }
 
-	public static void waitForPageLoadedCompletely() {
-		ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
+    public static void waitForPageLoadedCompletely() {
+        ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 
-			public Boolean apply(WebDriver driver) {
-				return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-			}
-		};
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+            }
+        };
 
-		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 30);
-		wait.until(pageLoadCondition);
+        WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 30);
+        wait.until(pageLoadCondition);
 
-	}
+    }
 
 }
