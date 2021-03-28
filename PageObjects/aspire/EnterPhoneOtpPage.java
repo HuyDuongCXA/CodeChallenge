@@ -1,6 +1,7 @@
 package aspire;
 
 import driverUltils.DriverUtils;
+import org.openqa.selenium.ElementNotInteractableException;
 
 public class EnterPhoneOtpPage extends LoginToAspirePage {
 	
@@ -12,6 +13,14 @@ public class EnterPhoneOtpPage extends LoginToAspirePage {
     public void enterPhoneOtp(UserInfo userInfo) {
         DriverUtils.waitForPageLoadedCompletely();
         DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
-  	  getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+  	    //getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+
+
+        try {
+            getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+        } catch (ElementNotInteractableException e) {
+            getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+            e.printStackTrace();
+        }
     }
 }
