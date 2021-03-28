@@ -20,11 +20,11 @@ public class DriverUtils {
     }
 
     public static void setImplicitlyWait() {
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.LONG_TIMEOUT, TimeUnit.MILLISECONDS);
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.LONG_TIMEOUT, TimeUnit.SECONDS);
     }
 
     public static void setLowImplicitlyWait() {
-        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.SHORT_TIMEOUT, TimeUnit.MILLISECONDS);
+        Constant.WEBDRIVER.manage().timeouts().implicitlyWait(Constant.SHORT_TIMEOUT, TimeUnit.SECONDS);
     }
 
     public static void maximize() {
@@ -39,7 +39,7 @@ public class DriverUtils {
             }
         };
 
-        WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 30);
+        WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Constant.TIMEOUT);
         wait.until(pageLoadCondition);
 
     }

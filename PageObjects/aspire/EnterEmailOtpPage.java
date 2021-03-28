@@ -11,14 +11,15 @@ public class EnterEmailOtpPage extends GeneralPage {
 	    
 	    // Methods
 	    public void enterEmailOtp(UserInfo userInfo) {
-	  	  //DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
-	  	  //getElement(OTP_TXT).sendKeys(userInfo.getEmailOtp());
 			DriverUtils.waitForPageLoadedCompletely();
 			DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
 
 			try {
 				getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
 			} catch (ElementNotInteractableException e) {
+				getElement(RESEND_OTP_BTN).click();
+				DriverUtils.waitForPageLoadedCompletely();
+				DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
 				getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
 			}
 
