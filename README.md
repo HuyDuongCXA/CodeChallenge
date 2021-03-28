@@ -2,17 +2,32 @@
 
 ## Installation
 
-Please use IntelliJ IDEA or Eclipse IDE to run the test
+- Eclipse or Intelli J
+- Java JDK
 
-Make sure you have JAVA (JDK) downloaded and installed
+## Build steps
+ Build steps
+```python
+ 1 Select pom.xml -> right click -> Run As -> Maven clean
+ 2 Select pom.xml -> right click -> Run As -> Maven install
+ 3 Select pom.xml -> right click -> Maven -> Download source (Intelli J only)
+```   
 
 ### How to run
-- If you are using IntelliJ IDEA then please choose Eclipse project option and choose Trust Project (if Trust Maven project displayed)
-You can execute the test using the "testNG.xml" file. Simply right-click on "testNG.xml" file then choose "Run'../testNg.xml'"
+- Execution via Eclipse:
+```python
+1 Go to root folder
+2 Select "testNG.xml" file -> right click -> Run As -> Run As TestNG Suite
+```
+- Execution via Intelli J:
+```python
+1 Go to root folder
+2 Select "testNG.xml" file -> right click -> Run As -> Run'../testNg.xml
+```
 
-- If you are using Eclipse then you can execute the test using the "testNG.xml" file. Simply right-click on "testNG.xml" file then choose "Run As TestNG Suite'"
+#### Note
 
-- If you encounter "Java error", please change the java complier version in the POM file to version in your machine then re-install Maven.
+If you encounter "Java error", please change the java complier version in the POM file to version in your machine then re-install Maven.
 
 EX: 
 
