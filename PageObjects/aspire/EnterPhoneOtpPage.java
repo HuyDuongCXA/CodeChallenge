@@ -7,7 +7,7 @@ import element_wrapper.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 
-public class EnterPhoneOtpPage extends LoginToAspirePage {
+public class EnterPhoneOtpPage extends GeneralPage {
 
     //Locators
     private final String RESEND_OTP_BTN = "//button[@data-cy='verify-otp-request-new']";

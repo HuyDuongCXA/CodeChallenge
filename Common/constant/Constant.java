@@ -1,7 +1,6 @@
 package constant;
 
 
-import common.Common;
 import org.openqa.selenium.WebDriver;
 
 public class Constant {

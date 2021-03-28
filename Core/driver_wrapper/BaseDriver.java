@@ -20,36 +20,47 @@ abstract class BaseDriver implements WebDriver {
     }
 
     public void get(String url) {
-        //logger.info(String.format("Load a new web page for the driver %s", DriverManagement.getThreadId()));
-        //getDriver().get(url);
+        /**
+         * Not implemented yet
+         */
     }
 
     public String getCurrentUrl() {
-        //logger.info(String.format("Get current url of the driver %s", DriverManagement.getThreadId()));
-        return getDriver().getCurrentUrl();
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
 
     public String getTitle() {
-        //logger.info(String.format("Get current title of the driver %s", DriverManagement.getThreadId()));
-        return getDriver().getTitle();
+        return  "a";
+        /**
+         *Not Implemented yet
+         */
     }
 
-    @Deprecated
+
     public List<WebElement> findElements(By by) {
-        throw new UnsupportedOperationException("This method is not supported");
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
 
     public WebElement findElement(By by) {
-        return getDriver().findElement(by);
-
-        //throw new UnsupportedOperationException("This method is not supported");
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
     public String getPageSource() {
-        logger.info(String.format("Get source of the last load page of the driver %s", DriverManagement.getThreadId()));
-        return getDriver().getPageSource();
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
     public void close() {
@@ -62,20 +73,27 @@ abstract class BaseDriver implements WebDriver {
         getDriver().quit();
     }
 
-    @Deprecated
+
     public Set<String> getWindowHandles() {
-        throw new UnsupportedOperationException("This method is not supported");
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
-    @Deprecated
+
     public String getWindowHandle() {
-        throw new UnsupportedOperationException("This method is not supported");
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
     public TargetLocator switchTo() {
-        logger.info(String.format("Send commands to the different frame or window of the driver %s",
-                DriverManagement.getThreadId()));
-        return getDriver().switchTo();
+        /**
+         *Not Implemented yet
+         */
+        return null;
     }
 
     public Navigation navigate() {

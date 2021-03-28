@@ -20,18 +20,6 @@ public class DriverUtils {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
 
-    public static void setImplicitlyWait() {
-        DriverManagement.getDriver().manage().timeouts().implicitlyWait(Constant.LONG_TIMEOUT, TimeUnit.SECONDS);
-    }
-
-    public static void setLowImplicitlyWait() {
-        DriverManagement.getDriver().manage().timeouts().implicitlyWait(Constant.SHORT_TIMEOUT, TimeUnit.SECONDS);
-    }
-
-    public static void maximize() {
-        Constant.WEBDRIVER.manage().window().maximize();
-    }
-
     public static void waitForPageLoadedCompletely() {
         ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 

@@ -23,13 +23,7 @@ public class LoginToAspirePage extends GeneralPage {
     Element regiterLink = new Element(By.xpath("//a[@class='text-primary text-bold login-step-start__register-link']"));
 
     // Methods
-
-    public void testMethod(){
-        regiterLink.click();
-    }
-
     public void enterMobileNumber(UserInfo mobileInfo) {
-        //DriverUtils.waitForElementDisplayed(FLAG_ICON);
         getElement(PHONE_NUMBER_TXT).click();
         getElement(PHONE_NUMBER_TXT).sendKeys(mobileInfo.getPhoneNumber());
     }
@@ -39,7 +33,6 @@ public class LoginToAspirePage extends GeneralPage {
     }
 
     public void clickRegisterLink() {
-        //DriverUtils.waitForElementDisplayed(FLAG_ICON);
 
         try {
             getElement(REGISTER_LINK).click();

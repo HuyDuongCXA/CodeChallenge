@@ -3,7 +3,6 @@ package driver_wrapper;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import common.Common;
 import common.DriverType;
 import constant.Constant;
 import org.apache.logging.log4j.LogManager;
@@ -14,9 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import test_cases.RegistrationTest;
+import utilities.Utilities;
 
 
 public class Driver extends BaseDriver {
@@ -26,12 +24,19 @@ public class Driver extends BaseDriver {
     private WebDriver _driver;
 
     public Driver(DriverType type, boolean parallel, String hub) {
+        String os = System.getProperty("os.name");
         try {
             logger.info(String.format("Create new Driver with type %s", type.getValue()));
             switch (type.getValue()) {
                 case "Chrome":
-                    System.setProperty("webdriver.chrome.driver",
-                            Common.getProjectPath() + "/Executables/chromedriver");
+                    if (os.equals("Mac OS X")){
+                        System.setProperty("webdriver.chrome.driver",
+                                Utilities.getProjectPath() + "/Executables/chromedriver");
+                }
+
+                    else{System.setProperty("webdriver.chrome.driver",
+                            Utilities.getProjectPath() + "/Executables/chromedriver.exe");}
+
                     if (!parallel) {
                         _driver = new ChromeDriver();
                     } else if (parallel) {
@@ -44,8 +49,13 @@ public class Driver extends BaseDriver {
                     break;
 
                 case "Firefox":
-                    System.setProperty("webdriver.gecko.driver",
-                            System.getProperty("user.dir") + "\\Core\\core.drivers\\geckodriver.exe");
+                    if (os.equals("Mac OS X")){
+                        System.setProperty("webdriver.chrome.driver",
+                                Utilities.getProjectPath() + "/Executables/geckodriver");
+                    }
+
+                    else{System.setProperty("webdriver.chrome.driver",
+                            Utilities.getProjectPath() + "/Executables/geckodriver.exe");}
                     if (!parallel) {
                         _driver = new FirefoxDriver();
                     } else if (parallel) {

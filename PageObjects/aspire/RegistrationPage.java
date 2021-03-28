@@ -1,6 +1,5 @@
 package aspire;
 
-import driverUltils.DriverUtils;
 import element_wrapper.Element;
 
 public class RegistrationPage extends GeneralPage {
@@ -25,12 +24,10 @@ public class RegistrationPage extends GeneralPage {
 	}
 	
 	public void enterEmailAddress(UserInfo userInfo) {
-		//DriverUtils.waitForElementDisplayed(EMAIL_ADDRESS_TXT);
 		getElement(EMAIL_ADDRESS_TXT).sendKeys(userInfo.getemailAddress());
 	}
 	
 	public void enterPhoneNumber(UserInfo userInfo) {
-		//DriverUtils.waitForElementDisplayed(FLAG_ICN);
 		Element element = new Element(FLAG_ICN);
 		element.waitForClickable();
 		getElement(MOBILE_NUMBER_TXT).sendKeys(userInfo.getPhoneNumber());
@@ -51,7 +48,6 @@ public class RegistrationPage extends GeneralPage {
 	}
 	
 	public void clickContinueBtn() {
-		//DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
 		getElement(CONTINUE_BTN).click();
 	}
 	
@@ -66,7 +62,6 @@ public class RegistrationPage extends GeneralPage {
 	}
 	
 	public void clickCompletedContinueBtn() {
-		//DriverUtils.waitForPageLoadedCompletely();
 		getElement(COMPLETED_CONTINUE_BTN).click();
 	}
 	
