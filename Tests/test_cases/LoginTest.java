@@ -8,7 +8,7 @@ import aspire.BusinessDetailsPage;
 import test_base.TestBase;
 
 public class LoginTest extends TestBase {
-	
+
 	@Test
 	public void TC01() {
 		LoginToAspirePage loginToAspirePage = new LoginToAspirePage();
@@ -22,6 +22,7 @@ public class LoginTest extends TestBase {
 		EnterEmailOtpPage enterEmailOtpPage = new EnterEmailOtpPage();
 		BusinessDetailsPage businessDetailsPage = new BusinessDetailsPage();
 		CompleteVerificationPage completeVerificationPage = new CompleteVerificationPage();
+		OnboardingNpsPage onboardingNpsPage = new OnboardingNpsPage();
 		
 		
 		loginToAspirePage.clickRegisterLink();
@@ -40,9 +41,11 @@ public class LoginTest extends TestBase {
 		completeVerificationPage.clickBeginVerificationBtn();
 		completeVerificationPage.UploadPhoto();
 		completeVerificationPage.clickContinueBtn();
-		String actual = completeVerificationPage.getSelfieWithKtpText();
-		Assert.assertEquals(actual,"Selfie with KTP");
-
+		completeVerificationPage.uploadSelfiePhoto();
+		completeVerificationPage.clickSelfieContinueBtn();
+		onboardingNpsPage.clickContinueBtn();
+		String actual = onboardingNpsPage.getOnboardingText();
+		Assert.assertEquals(actual,"We are on it!");
 	}
-	
+
 }
