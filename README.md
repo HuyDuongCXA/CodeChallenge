@@ -8,9 +8,12 @@
 ## Build steps
  Build steps
 ```python
- 1 Select pom.xml -> right click -> Run As -> Maven clean
- 2 Select pom.xml -> right click -> Run As -> Maven install
- 3 Select pom.xml -> right click -> Maven -> Download source (Intelli J only)
+For Eclipse:
+ 1 Select pom.xml -> right click -> Run As -> Maven clean (Eclipse)
+ 2 Select pom.xml -> right click -> Run As -> Maven install (Eclipse)
+ 
+For Intelli J:
+ - Select pom.xml -> right click -> Maven -> Reload Project (Intelli J only)
 ```   
 
 ### How to run

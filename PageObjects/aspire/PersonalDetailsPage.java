@@ -1,11 +1,14 @@
 package aspire;
 
+import driver_wrapper.Driver;
+import driver_wrapper.DriverManagement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 
 import driverUltils.DriverUtils;
 import utilities.Utilities;
 
-public class PersonalDetailsPage extends LoginToAspirePage {
+public class PersonalDetailsPage extends GeneralPage {
 
 
     //Locators
@@ -31,17 +34,14 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 
     // Methods
     public void clickYesContinueBtn() {
-        DriverUtils.waitForElementDisplayed(YES_CONTINUE_BTN);
         getElement(YES_CONTINUE_BTN).click();
     }
 
     public void clickStandardGetStartedBtn() {
-        DriverUtils.waitForElementDisplayed(STANDARD_GET_STARTED_BTN);
         getElement(STANDARD_GET_STARTED_BTN).click();
     }
 
     public void clickGetStartedBtn() {
-        DriverUtils.waitForElementDisplayed(GET_STARTED_BTN);
         getElement(GET_STARTED_BTN).click();
     }
 
@@ -62,34 +62,34 @@ public class PersonalDetailsPage extends LoginToAspirePage {
 
         // Click on DateOfBirth Combobox
         DriverUtils.waitForElementDisplayed(DOB_CBB);
-        getElement(DOB_CBB).click();
+        DriverManagement.getDriver().findElement(By.xpath(DOB_CBB)).click();
 
         // Click on the current Year label
         DriverUtils.waitForElementDisplayed(yearTemp);
-        getElement(yearTemp).click();
-        DriverUtils.setLowImplicitlyWait();
+        DriverManagement.getDriver().findElement(By.xpath(yearTemp)).click();
+        Driver.setLowImplicitlyWait();
 
         // Loop through the calendar to find the wanted Year
         for (int i = 0; i < 9; i++) {
 
             boolean a = isElementPresent(wantedYearTemp);
             if (a == false) {
-                getElement(PREVIOUS_YEAR_ICON).click();
+                DriverManagement.getDriver().findElement(By.xpath(PREVIOUS_YEAR_ICON)).click();
             } else {
                 break;
             }
         }
         // Then click on the wanted Year
-        DriverUtils.setImplicitlyWait();
-        getElement(wantedYearTemp).click();
-        getElement(monthTemp).click();
-        getElement(wantedMonthTemp).click();
+        Driver.setImplicitlyWait();
+        DriverManagement.getDriver().findElement(By.xpath(wantedYearTemp)).click();
+        DriverManagement.getDriver().findElement(By.xpath(monthTemp)).click();
+        DriverManagement.getDriver().findElement(By.xpath(wantedMonthTemp)).click();
 
         try {
-            getElement(wantedDayTemp).click();
+            DriverManagement.getDriver().findElement(By.xpath(wantedDayTemp)).click();
         } catch (StaleElementReferenceException e) {
             e.printStackTrace();
-            getElement(wantedDayTemp).click();
+            DriverManagement.getDriver().findElement(By.xpath(wantedDayTemp)).click();
         }
     }
 

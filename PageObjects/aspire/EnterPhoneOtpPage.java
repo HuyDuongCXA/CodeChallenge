@@ -1,9 +1,13 @@
 package aspire;
 
 import driverUltils.DriverUtils;
+import driver_wrapper.Driver;
+import driver_wrapper.DriverManagement;
+import element_wrapper.Element;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 
-public class EnterPhoneOtpPage extends LoginToAspirePage {
+public class EnterPhoneOtpPage extends GeneralPage {
 
     //Locators
     private final String RESEND_OTP_BTN = "//button[@data-cy='verify-otp-request-new']";
@@ -15,19 +19,13 @@ public class EnterPhoneOtpPage extends LoginToAspirePage {
     public void enterPhoneOtp(UserInfo userInfo) {
         DriverUtils.waitForPageLoadedCompletely();
         DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
+        DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getPhoneOtp());
 
         try {
-            getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+            DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getPhoneOtp());
         } catch (ElementNotInteractableException e) {
-            System.out.println("Phone OTP catch reached");
-            getElement(RESEND_OTP_BTN).click();
-            System.out.println("RESEND_OTP_BTN clicked");
-            DriverUtils.waitForPageLoadedCompletely();
-            DriverUtils.waitForElementDisplayed(RESEND_OTP_IN_SECOND);
-            getElement(UNFOCUSED_OTP_TXT).click();
-            System.out.println("UNFOCUSED_OTP_TXT clicked");
-            getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
-            System.out.println("Enter OTP successfully");
+            DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getPhoneOtp());
+
         }
     }
 }

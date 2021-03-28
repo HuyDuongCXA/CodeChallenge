@@ -45,4 +45,8 @@ public class Utilities {
         return randomUen + "a";
     }
 
+    public static String getProjectPath() {
+        return System.getProperty("user.dir").toString();
+    }
+
 }

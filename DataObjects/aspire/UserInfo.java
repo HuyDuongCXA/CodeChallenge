@@ -47,7 +47,7 @@ public class UserInfo {
 	public void SetNationality(String nationality) {this.nationality = nationality;}
 	public void SetGender(String gender) {this.gender = gender;}
 	public void SetInterest(String interest) {this.interest = interest;}
-	public void SetregisteredEmailAddress(String registeredEmailAddress) {this.registeredEmailAddress = registeredEmailAddress;}
+	public void SetRegisteredEmailAddress(String registeredEmailAddress) {this.registeredEmailAddress = registeredEmailAddress;}
 	
 	//public void SetMarketingQues(String marketingQues) {this.marketingQues = marketingQues;}
 	

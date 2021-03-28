@@ -1,6 +1,8 @@
 package aspire;
 
 import driverUltils.DriverUtils;
+import driver_wrapper.DriverManagement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 
 public class EnterEmailOtpPage extends GeneralPage {
@@ -15,12 +17,9 @@ public class EnterEmailOtpPage extends GeneralPage {
 			DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
 
 			try {
-				getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+				DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getEmailOtp());
 			} catch (ElementNotInteractableException e) {
-				getElement(RESEND_OTP_BTN).click();
-				DriverUtils.waitForPageLoadedCompletely();
-				DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
-				getElement(OTP_TXT).sendKeys(userInfo.getPhoneOtp());
+				DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getEmailOtp());
 			}
 
 	    }
