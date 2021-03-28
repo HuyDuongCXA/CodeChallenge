@@ -10,8 +10,7 @@ public class SandBox {
 
 	public static void main(String[] args) {
 		Calendar cal = Calendar.getInstance();
-		String a = new SimpleDateFormat("DDDD,MMMM,YYYY").format(cal.getTime());
-		System.out.println(a);
+
 	}
 
 }

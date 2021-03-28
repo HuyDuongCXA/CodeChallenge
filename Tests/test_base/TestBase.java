@@ -21,7 +21,7 @@ public class TestBase {
 		else{System.setProperty("webdriver.chrome.driver", Common.getProjectPath() + "/Executables/chromedriver.exe");}
 		System.setProperty("webdriver.chrome.driver", Common.getProjectPath() + "/Executables/chromedriver");
 		Constant.WEBDRIVER = new ChromeDriver();
-		Constant.WEBDRIVER.navigate().to("https://feature-qa.customer-frontend.staging.aspireapp.com/sg");
+		Constant.WEBDRIVER.navigate().to(Constant.AUT_URL);
 		DriverUtils.setImplicitlyWait();
 		DriverUtils.maximize();
 	}

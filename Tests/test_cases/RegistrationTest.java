@@ -9,10 +9,9 @@ import test_base.TestBase;
 
 public class RegistrationTest extends TestBase {
 
-	@Test
+	@Test(invocationCount = 1)
 	public void TC01() {
 		System.out.println("TC01 - Verify that do the registration flow until the user meets the step for waiting the approval.");
-
 		// Declaration
 		String expected = "We are on it!";
 		LoginToAspirePage loginToAspirePage = new LoginToAspirePage();
