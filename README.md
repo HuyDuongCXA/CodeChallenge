@@ -13,7 +13,7 @@ For Eclipse:
  2 Select pom.xml -> right click -> Run As -> Maven install (Eclipse)
  
 For Intelli J:
-  - Select pom.xml -> right click -> Maven -> Reload Project (Intelli J only)
+ - Select pom.xml -> right click -> Maven -> Reload Project (Intelli J only)
 ```   
 
 ### How to run
