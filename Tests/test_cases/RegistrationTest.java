@@ -56,7 +56,7 @@ public class RegistrationTest extends TestBase {
 		onboardingNpsPage.clickContinueBtn();
 		String actual = onboardingNpsPage.getOnboardingText();
 		Assert.assertEquals(actual,expected);
-		System.out.println("7. Onboarding NPS Page is reached");
+		System.out.println("7. Onboarding NPS Page is reached ");
 	}
 
 }
