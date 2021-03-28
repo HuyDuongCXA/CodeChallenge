@@ -3,6 +3,8 @@ package aspire;
 import common.Common;
 import constant.Constant;
 import driverUltils.DriverUtils;
+import driver_wrapper.DriverManagement;
+import org.openqa.selenium.By;
 
 
 public class CompleteVerificationPage extends GeneralPage {
@@ -20,7 +22,8 @@ public class CompleteVerificationPage extends GeneralPage {
 
     //Methods
     public void UploadPhoto() {
-        getElement(UPLOAD_KTP_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
+        DriverManagement.getDriver().findElement(By.xpath(UPLOAD_KTP_BTN)).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
+        //getElement(UPLOAD_KTP_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
     }
 
     public void clickBeginVerificationBtn() {
@@ -59,6 +62,7 @@ public class CompleteVerificationPage extends GeneralPage {
     }
 
     public void uploadSelfiePhoto() {
-        getElement(TAKE_A_SELFIE_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
+        DriverManagement.getDriver().findElement(By.xpath(TAKE_A_SELFIE_BTN)).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
+        //getElement(TAKE_A_SELFIE_BTN).sendKeys(Common.getProjectPath() + "/Executables/Screenshot.png");
     }
 }

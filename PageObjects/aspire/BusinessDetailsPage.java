@@ -21,7 +21,7 @@ public class BusinessDetailsPage extends GeneralPage {
 
     //Methods
     public void clickContinueBtn() {
-        DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
+        //DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
         getElement(CONTINUE_BTN).click();
     }
 
@@ -32,7 +32,7 @@ public class BusinessDetailsPage extends GeneralPage {
     public void selectEntityTypes(BusinessInfo businessInfo) {
         String entityTypeCategory = ENTITY_TYPE_CATEGORY_LBL.format(ENTITY_TYPE_CATEGORY_LBL, businessInfo.getEntityTypeCategory());
         String entityType = ENTITY_TYPE_LBL.format(ENTITY_TYPE_LBL, businessInfo.getEntityType());
-        DriverUtils.waitForPageLoadedCompletely();
+        //DriverUtils.waitForPageLoadedCompletely();
         getElement(ENTITY_TYPE_CATEGORY_CBB_ICON).click();
         getElement(entityTypeCategory).click();
         getElement(ENTITY_TYPE_CBB).click();

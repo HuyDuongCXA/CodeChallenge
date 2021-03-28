@@ -1,5 +1,7 @@
 package aspire;
 
+import element_wrapper.Element;
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 
@@ -18,11 +20,16 @@ public class LoginToAspirePage extends GeneralPage {
     private final String OTP_TXT = "//input[@class='digit-input__input-real absolute']";
     private final String FLAG_ICON = "//div[@class='q-img__content absolute-full']";
     private final String REGISTER_LINK = "//a[@class='text-primary text-bold login-step-start__register-link']";
+    Element regiterLink = new Element(By.xpath("//a[@class='text-primary text-bold login-step-start__register-link']"));
 
     // Methods
 
+    public void testMethod(){
+        regiterLink.click();
+    }
+
     public void enterMobileNumber(UserInfo mobileInfo) {
-        DriverUtils.waitForElementDisplayed(FLAG_ICON);
+        //DriverUtils.waitForElementDisplayed(FLAG_ICON);
         getElement(PHONE_NUMBER_TXT).click();
         getElement(PHONE_NUMBER_TXT).sendKeys(mobileInfo.getPhoneNumber());
     }
@@ -32,7 +39,7 @@ public class LoginToAspirePage extends GeneralPage {
     }
 
     public void clickRegisterLink() {
-        DriverUtils.waitForElementDisplayed(FLAG_ICON);
+        //DriverUtils.waitForElementDisplayed(FLAG_ICON);
 
         try {
             getElement(REGISTER_LINK).click();

@@ -11,7 +11,7 @@ public class OnboardingNpsPage extends GeneralPage {
 
     //Methods
     public void clickContinueBtn() {
-        DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
+        //DriverUtils.waitForElementDisplayed(CONTINUE_BTN);
         try {
 
             for (int i = 0; i < 3; i++) {
