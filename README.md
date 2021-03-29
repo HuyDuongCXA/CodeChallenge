@@ -2,7 +2,7 @@
 
 ## Installation
 
-- Eclipse or Intelli J
+- Eclipse or Intelli J (recommended)
 - Java JDK
 
 ## Build steps
