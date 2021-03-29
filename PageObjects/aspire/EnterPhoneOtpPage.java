@@ -19,7 +19,6 @@ public class EnterPhoneOtpPage extends GeneralPage {
     public void enterPhoneOtp(UserInfo userInfo) {
         DriverUtils.waitForPageLoadedCompletely();
         DriverUtils.waitForElementDisplayed(RESEND_OTP_BTN);
-        DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getPhoneOtp());
 
         try {
             DriverManagement.getDriver().findElement(By.xpath(OTP_TXT)).sendKeys(userInfo.getPhoneOtp());
