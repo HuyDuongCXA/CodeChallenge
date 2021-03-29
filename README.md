@@ -4,6 +4,7 @@
 
 - Eclipse or Intelli J (recommended)
 - Java JDK
+- Chrome 89
 
 ## Build steps
  Build steps
