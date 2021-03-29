@@ -40,3 +40,6 @@ EX:
 <maven.compiler.target>1.14</maven.compiler.target>
 ```    
 If you're using JAVA 12 then change 1.14 into 1.12
+
+## Structure
+<img width="967" alt="Screen Shot 2021-03-29 at 10 23 55" src="https://user-images.githubusercontent.com/61961708/112783178-e9ec8800-9078-11eb-8b9c-2b90baf8ffc8.png">
